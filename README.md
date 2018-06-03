@@ -1,5 +1,11 @@
-node-xml2js
+browser-xml2js
 ===========
+
+This is a fork of [node-xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
+It is meant to be used in a browser environment, whereas the upstream is meant to
+be used in [NodeJS](https://nodejs.org/en/) environment.
+It ships with browser [stream](https://github.com/juliangruber/stream) and 
+[timers](https://github.com/popomore/schedule).
 
 Ever had the urge to parse XML? And wanted to access the data in some sane,
 easy way? Don't want to compile a C parser, for whatever reason? Then xml2js is

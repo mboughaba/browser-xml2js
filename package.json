@@ -5,7 +5,7 @@
     "xml",
     "json"
   ],
-  "homepage": "https://github.com/Leonidas-from-XIV/node-xml2js",
+  "homepage": "https://github.com/mboughaba/browser-xml2js",
   "version": "0.4.19",
   "author": "Marek Kubica <marek@xivilization.net> (https://xivilization.net)",
   "contributors": [
@@ -53,7 +53,8 @@
     "David Wood <david.p.wood@gmail.com> (http://codesleuth.co.uk/)",
     "Nicolas Maquet (https://github.com/nmaquet)",
     "Lovell Fuller (http://lovell.info/)",
-    "d3adc0d3 (https://github.com/d3adc0d3)"
+    "d3adc0d3 (https://github.com/d3adc0d3)",
+    "mboughaba (https://github.com/mboughaba)"
   ],
   "main": "./lib/xml2js",
   "files": [
@@ -69,10 +70,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Leonidas-from-XIV/node-xml2js.git"
+    "url": "https://github.com/mboughaba/browser-xml2js.git"
   },
   "dependencies": {
     "sax": ">=0.6.0",
+    "stream": "0.0.2",
+    "timers": "^0.1.1",
     "xmlbuilder": "~9.0.1"
   },
   "devDependencies": {
