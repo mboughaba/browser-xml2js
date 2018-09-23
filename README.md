@@ -179,6 +179,48 @@ var builder = new xml2js.Builder();
 var xml = builder.buildObject(obj);
 ```
 
+### Adding xmlns attributes
+
+You can generate XML that declares XML namespace prefix / URI pairs with xmlns attributes.
+
+Example declaring a default namespace on the root element:
+
+```javascript
+let obj = { 
+  Foo: {
+    $: {
+      "xmlns": "http://foo.com"
+    }   
+  }
+};  
+```
+Result of `buildObject(obj)`:
+```xml
+<Foo xmlns="http://foo.com"/>
+```
+Example declaring non-default namespaces on non-root elements:
+```javascript
+let obj = {
+  'foo:Foo': {
+    $: {
+      'xmlns:foo': 'http://foo.com'
+    },
+    'bar:Bar': {
+      $: {
+        'xmlns:bar': 'http://bar.com'
+      }
+    }
+  }
+}
+```
+Result of `buildObject(obj)`:
+```xml
+<foo:Foo xmlns:foo="http://foo.com">
+  <bar:Bar xmlns:bar="http://bar.com"/>
+</foo:Foo>
+```
+
+
 Processing attribute, tag names and values
 ------------------------------------------
 
@@ -264,7 +306,7 @@ value})``. Possible options are:
     text nodes.
   * `mergeAttrs` (default: `false`): Merge attributes and child elements as
     properties of the parent, instead of keying attributes off a child
-    attribute object. This option is ignored if `ignoreAttrs` is `false`.
+    attribute object. This option is ignored if `ignoreAttrs` is `true`.
   * `validator` (default `null`): You can specify a callable that validates
     the resulting structure somehow, however you want. See unit tests
     for an example.
@@ -341,6 +383,10 @@ Options for the `Builder` class
 These options are specified by ``new Builder({optionName: value})``.
 Possible options are:
 
+  * `attrkey` (default: `$`): Prefix that is used to access the attributes.
+    Version 0.1 default was `@`.
+  * `charkey` (default: `_`): Prefix that is used to access the character
+    content. Version 0.1 default was `#`.
   * `rootName` (default `root` or the root key name): root element name to be used in case
      `explicitRoot` is `false` or to override the root element name.
   * `renderOpts` (default `{ 'pretty': true, 'indent': '  ', 'newline': '\n' }`):
