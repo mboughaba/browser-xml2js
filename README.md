@@ -1,6 +1,10 @@
 browser-xml2js
 ===========
 
+[![Build Status](https://travis-ci.org/mboughaba/browser-xml2js.svg?branch=master)](https://travis-ci.org/mboughaba/browser-xml2js)
+[![Coverage Status](https://coveralls.io/repos/mboughaba/browser-xml2js/badge.svg)](https://coveralls.io/r/mboughaba/browser-xml2js)
+[![Dependency Status](https://david-dm.org/mboughaba/browser-xml2js.svg)](https://david-dm.org/mboughaba/browser-xml2js)
+
 This is a fork of [node-xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 It is meant to be used in a browser environment, whereas the upstream is meant to
 be used in [NodeJS](https://nodejs.org/en/) environment.
